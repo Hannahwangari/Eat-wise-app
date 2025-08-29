@@ -1,29 +1,34 @@
-function Hero() {
+import React from "react";
+
+const Hero = () => {
   return (
-    <div className="min-h-screen bg-green-600 flex flex-col items-center justify-center text-center px-6">
-      {/* Hero Image */}
-      <img 
-        src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600" 
-        alt="Healthy Meal"
-        className="rounded-xl shadow-lg mb-6 w-full max-w-sm md:max-w-md lg:max-w-lg"
-      />
+    <section
+      id="hero"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-6"
+      style={{
+        backgroundImage: "url('/khloe-arledge-ND3edEmzcdQ-unsplash.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-[#098826]/60 mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
 
-      {/* Title */}
-      <h1 className="text-2xl md:text-4xl font-bold text-white mb-4">
-        Take Control of Your Health Today
-      </h1>
-
-      {/* Subtitle */}
-      <p className="text-white text-sm md:text-lg mb-6 max-w-md">
-        EATWISE helps in guiding your food choices and tracking your nutrition.
-      </p>
-
-      {/* CTA Button */}
-      <button className="bg-white text-green-600 font-semibold py-3 px-6 rounded-full shadow hover:bg-gray-100 transition">
-        Get Started
-      </button>
-    </div>
+      {/* Content */}
+      <div className="relative z-10">
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          Eat Wise, Live Healthy
+        </h2>
+        <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          Discover healthy recipes, track your nutrition, and make smarter food choices every day.
+        </p>
+        <button className="bg-[#098826] text-white px-8 py-3 rounded-full font-semibold shadow-lg transition transform hover:bg-[#076a1e] hover:scale-105 hover:shadow-xl">
+          Get Started
+        </button>
+      </div>
+    </section>
   );
-}
+};
 
 export default Hero;
