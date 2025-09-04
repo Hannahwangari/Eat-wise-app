@@ -18,7 +18,7 @@ It educates users on nutritional facts, helps them find healthy recipes based on
 | Feature            | API                | Description |
 |--------------------|-------------------|-------------|
 | **Recipe Search**  | [Edamam Recipe API](https://developer.edamam.com/) | Find healthy recipes based on ingredients or preferences |
-| **Nutrition Data** | [Nutritionix API](https://www.nutritionix.com/business/api) | Get detailed nutrition facts of common foods |
+| **Nutrition Data** | [CalorieNinja API](https://calorieninjas.com/api) | Get detailed nutrition facts of common foods |
 | **Quotes/Tips**    | [ZenQuotes API](https://zenquotes.io/) OR [Type.fit API](https://type.fit/api/quotes) | Display random motivational health tips or quotes |
 
 ---
@@ -38,7 +38,7 @@ From the design mockups:
 
 ## 📂 Tech Stack
 - **Frontend:** React, Tailwind CSS (optional: plain HTML/CSS/JS for practice)  
-- **APIs:** Edamam, Nutritionix, ZenQuotes/Type.fit  
+- **APIs:** Edamam, CalorieNinja, ZenQuotes/Type.fit  
 - **Version Control:** Git & GitHub  
 
 ---
@@ -60,4 +60,5 @@ For major changes, please open an issue first to discuss what you would like to 
 This project is licensed under the MIT License.  
 
 ---
+
 ✨ *EatWise – Your pocket nutrition buddy for a healthier lifestyle!* ✨
