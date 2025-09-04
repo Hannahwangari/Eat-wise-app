@@ -1,44 +1,88 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false); // closes menu after clicking a link
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-20 bg-[#098826]/80 backdrop-blur-md shadow-md">
-      <div className="flex justify-between items-center px-4 py-4 sm:px-6 lg:px-8">
-        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-          Eat <span className="text-green-300">Wise</span>
-        </h1>
+    <nav className="w-full bg-green-700 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0 text-2xl font-bold text-white">
+            Eat Wise
+          </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 text-white font-medium">
-          <a href="#features" className="hover:text-green-300">Features</a>
-          <a href="#about" className="hover:text-green-300">About</a>
-          <a href="#contact" className="hover:text-green-300">Contact</a>
-        </nav>
+          {/* Hamburger button (mobile) */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white hover:text-gray-200 focus:outline-none transition-colors duration-300"
+            >
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-2xl text-white focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? "✕" : "☰"}
-        </button>
+          {/* Menu (desktop) */}
+          <div className="hidden md:flex space-x-6">
+            <Link 
+              to="/" 
+              className="text-white hover:text-gray-200 transition-colors duration-300"
+            >
+              Home
+            </Link>
+            <Link 
+              to="/tips" 
+              className="text-white hover:text-gray-200 transition-colors duration-300"
+            >
+              Tips
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-black/90 text-white text-center py-6 space-y-4">
-          <a href="#features" className="block hover:text-green-300" onClick={handleLinkClick}>Features</a>
-          <a href="#about" className="block hover:text-green-300" onClick={handleLinkClick}>About</a>
-          <a href="#contact" className="block hover:text-green-300" onClick={handleLinkClick}>Contact</a>
+      {/* Dropdown menu (mobile) */}
+      {isOpen && (
+        <div className="md:hidden bg-green-600 px-4 pt-2 pb-3 space-y-1">
+          <Link
+            to="/"
+            className="block px-3 py-2 rounded-md text-white hover:bg-green-500 transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            to="/tips"
+            className="block px-3 py-2 rounded-md text-white hover:bg-green-500 transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Tips
+          </Link>
         </div>
       )}
-    </header>
+    </nav>
   );
 };
 

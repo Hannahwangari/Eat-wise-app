@@ -1,0 +1,1 @@
+{"env": {"browser": true, "es2021": true}, "globals": {"import.meta": "readonly"}, "rules": {"no-undef": "warn"}}
