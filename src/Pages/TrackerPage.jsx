@@ -150,7 +150,7 @@ const TrackerPage = () => {
             -100 kcal
           </button>
         </div>
-      </div>
+      </div> {/* ✅ fully closed */}
 
       {/* Quick Logs */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -271,6 +271,12 @@ const TrackerPage = () => {
           className="px-6 py-3 bg-green-600 text-white rounded-xl shadow-md hover:bg-green-700 transition"
         >
           ⬅ Back to Tips
+        </button>
+        <button
+          onClick={() => navigate("/monthly-summary")}
+          className="px-6 py-3 bg-green-600 text-white rounded-xl shadow-md hover:bg-green-700 transition"
+        >
+          📊 View Monthly Summary
         </button>
         <button
           onClick={() => navigate("/")}
